@@ -4,13 +4,18 @@
   background: #FAFAFD;
   letter-spacing: 0.008em;
   position: relative;
+  display: table;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
 }
 
-.expenses td {  
-  border-top: 1px solid #D9E1EE;
+.expenses__row{  
+   border-top: 1px solid #D9E1EE;
 }
 
-.expenses__header {
+.header {
   color: #3B4B66;
   font-weight: 400;
   font-size: .75em;
@@ -19,7 +24,7 @@
   padding-bottom: 0.3em;
 }
 
-.expenses__header_img {
+.header__img {
   padding-right: 0.5em;
   height: auto;
   position: relative;
@@ -39,17 +44,18 @@
   transition: transform .2s ease-in-out;
 }
 
-.expenses__header_last {
+.header_last {
   text-align: right;
   width: 10em;
 }
 
-.expenses__item {
+.expensesItem {
   font-size: 0.875em;
   line-height: 1.375em;
+  padding: 1em 0;
 }
 
-.expenses__item_tag {
+.expensesItem_tag {
   color: #556685;
   font-size: .75em;
   font-weight: 700;
@@ -60,7 +66,7 @@
   position: relative;
 }
 
-.expenses__item_tag:hover:after {
+.expensesItem_tag:hover:after {
   font-size: 10px;
   line-height: 16px;
   background: #FFF;
@@ -76,7 +82,7 @@
   width: 16em;
 }
 
-.expenses__item_tag:hover:before {
+.expensesItem_tag:hover:before {
   border: solid;
   border-color: #FFF transparent;
   border-width: 6px 6px 0 6px;
@@ -87,15 +93,15 @@
   z-index: 99;
 }
 
-.expenses__item_approver {
+.expensesItem_approver {
   color: #6B66B3;
 }
 
 .dropdown {
   position: absolute;
-  width: 7em;
-  height: 7.3em;
-  left: 92%;
+  width: 6em;
+  height: 6.5em;
+  left: 92.3%;
   top: 2em;
   background: #FFFFFF;
   font-size: 1em;
@@ -106,7 +112,20 @@
   gap: .8em;
   box-shadow: 0px 1px 4px rgba(0, 8, 32, 0.1), 0px 16px 32px rgba(0, 8, 32, 0.1);
   border-radius: 4px;
-  box-sizing: border-box;
   z-index: 10;
   cursor: pointer;
+  -webkit-animation: animate__dropdown .15s ease-in;
+          animation: animate__dropdown .15s ease-in;
+}
+
+@-webkit-keyframes animate__dropdown {
+  0%   {opacity: 0; top: 1em}
+  50%  {opacity: .5; top: 1.5em}
+  100% {opacity: 1; top: 2em}
+}
+
+@keyframes animate__dropdown {
+  0%   {opacity: 0; top: 1em}
+  50%  {opacity: .5; top: 1.5em}
+  100% {opacity: 1; top: 2em}
 }

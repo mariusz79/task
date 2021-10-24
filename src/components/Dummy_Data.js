@@ -35,5 +35,4 @@ export const DUMMY_BUDGET = {
     remaining_budget: 1200.80,
     total_spent: 320,
     pending: 273,
-    budget_level: 'success',
   }

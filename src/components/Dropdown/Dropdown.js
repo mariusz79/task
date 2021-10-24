@@ -13,18 +13,10 @@ const Dropdown = () => {
   const props = DUMMY_EXPENSES;
   const props1 = DUMMY_BUDGET;
 
-  let budget_level;
-  switch (props1.budget_level) {
-		case "success":
-			budget_level = `${classes.header__amount} ${classes.header__amount_success}`;
-			break;
-		case "danger":
-			budget_level = `${classes.header__amount} ${classes.header__amount_danger}`;
-			break;
-		default:
-			budget_level = `${classes.header__amount} ${classes.header__amount_normal}`;
-			break;
-	}
+  const budget_level = 
+	  props1.remaining_budget >= 0 ? 
+		 `${classes.header__amount} ${classes['header__amount--success']}` :
+		 `${classes.header__amount} ${classes['header__amount--danger']}`;
   
   const toggleShowDisplayHandler = () => {
     setShowDisplay(!showDisplay);
@@ -32,7 +24,7 @@ const Dropdown = () => {
 
   return (
 		<div className={classes.dropdown}>
-			<div className={classes.dropdown__header}>
+			<div className={classes.header}>
 				<span className={classes.header__title}>Your remaining budget:</span>
 				<span className={budget_level}>
 					{"\u20AC"} {props1.remaining_budget.toFixed(2)}
@@ -42,7 +34,7 @@ const Dropdown = () => {
 						src={chevronDown}
 						className={
 							showDisplay
-								? classes.header__chevron_rotate
+								? classes['header__chevron--rotate']
 								: classes.header__chevron
 						}
 						alt="chevron down icon"
@@ -50,11 +42,11 @@ const Dropdown = () => {
 				</span>
 			</div>
 			{showDisplay && (
-				<div className={classes.dropdown__display}>
+				<div className={classes.display}>
 					<div className={classes.display__title}>
 						Details
 					</div>
-					<div className={classes.display__spendings}>
+					<div className={classes.spendings}>
 						<div className={classes.spendings__item}>
 							<div>
 								<img className={classes.item__img} src={vector} alt='vector icon'/><span>Total Spent</span>
@@ -69,15 +61,15 @@ const Dropdown = () => {
 						</div>
 					</div>
 					<div className={classes.display__list}>
-						<table>
+						<table className={classes.list__table}>
 							<tbody>
 								{props.map((spending) => {
 									return (
 										<tr key={spending.id}>
-											<td>{spending.type_of_purchase}</td>
+											<td className={classes.list__data}>{spending.type_of_purchase}</td>
 											<td>{spending.provider}</td>
-											<td>{spending.date}</td>
-											<td>
+											<td className={classes.list__date}>{spending.date}</td>
+											<td className={classes.list__amount}>
 												{"\u20AC"} {spending.amount.toFixed(2)}
 											</td>
 										</tr>
@@ -86,10 +78,10 @@ const Dropdown = () => {
 							</tbody>
 						</table>
 					</div>
-					<div className={classes.display__link}>
+					<div className={classes.link}>
 						Show Transaction History
 						<span>
-							<img src={chevronRight} alt="chevron right icon" />
+							<img src={chevronRight} className={classes.link__img} alt="chevron right icon" />
 						</span>
 					</div>
 				</div>
