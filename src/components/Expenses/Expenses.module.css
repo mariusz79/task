@@ -4,14 +4,11 @@
   background: #FAFAFD;
   letter-spacing: 0.008em;
   position: relative;
-  display: table;
   border-collapse: collapse;
-  box-sizing: border-box;
-  text-indent: initial;
-  border-spacing: 2px;
+  table-layout: fixed;
 }
 
-.expenses__row{  
+.expenses__row {  
    border-top: 1px solid #D9E1EE;
 }
 
@@ -44,15 +41,21 @@
   transition: transform .2s ease-in-out;
 }
 
+.header_amount {
+  padding-left: 1em;
+  width: 12em;
+}
+
 .header_last {
   text-align: right;
-  width: 10em;
+  width: 12em;
 }
 
 .expensesItem {
   font-size: 0.875em;
   line-height: 1.375em;
-  padding: 1em 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .expensesItem_tag {
