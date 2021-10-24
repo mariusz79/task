@@ -1,0 +1,38 @@
+.container {
+  width: 67.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3em;
+}
+
+.tags {
+  display: inline;
+  position: relative;
+}
+
+.tags:hover:after {
+    font-size: 10px;
+    line-height: 16px;
+    background: #FFF;
+    border-radius: 4px;
+    bottom: 10px;
+    color: #556685;
+    content: attr(gloss);
+    left: -60%;
+    padding: 12px 20px;
+    position: absolute;
+    z-index: 98;
+    width: 16em;
+}
+
+.tags:hover:before {
+  border: solid;
+  border-color: #FFF;
+  border-width: 6px 6px 0 6px;
+  bottom: 4px;
+  content: "";
+  left: 46%;
+  position: absolute;
+  z-index: 99;
+}
