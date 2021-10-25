@@ -5,7 +5,7 @@
   width: 23.125em;
 }
 
-.header {
+.dropdown__header {
   font-size: 0.875em;
   font-weight: 700;
   line-height: 1.375em;
@@ -14,7 +14,7 @@
   padding: 1em 1.3em;
 }
 
-.display {
+.dropdown__display {
   font-size: 0.75em;
   line-height: 1.125em;
   background-color:#FFF;
@@ -31,7 +31,7 @@
           animation: animate__dropdown .2s ease-in;
 }
 
-.display:before{
+.dropdown__display:before{
  content:'';
  display: block;
  height: 1.2em;
@@ -47,37 +47,37 @@
  border-radius: 0 0 0 0.25em;
 }
 
-.header__amount {
+.dropdown__header__amount {
   padding-inline: 0.75em;  
 }
 
-.header__amount--success {
+.dropdown__header__amount--success {
   color: #128945;
 }
 
-.header__amount--danger {
+.dropdown__header__amount--danger {
   color: #BA0913;
 }
 
-.header__chevron {
+.dropdown__header__chevron {
   cursor: pointer;
   display: inline-block;
   transition: transform .2s ease-in-out;
 }
 
-.header__chevron--rotate {
+.dropdown__header__chevron--rotate {
   cursor: pointer;
   transform: rotate(180deg);
   transition: transform .2s ease-in-out;
 }
 
-.display__title {
+.dropdown__display__title {
   margin: 0;
   border-bottom: 1px solid #D9E1EE;
   padding: 0.5em 0;
 }
 
-.spendings {
+.dropdown__spendings {
   border-bottom: 1px solid #D9E1EE;
   display: flex;
   flex-direction: column;
@@ -86,41 +86,41 @@
   gap: 0.5em;
 }
 
-.spendings__item {
+.dropdown__spendings__item {
   display: flex;
   justify-content: space-between;
   align-items: self-end;
 }
 
-.item__img{
+.dropdown__spendings__item__img{
   padding-right: 0.5em;
   position: relative;
   top: 0.25em;
 }
 
-.spending__amount {
+.dropdown__spendings__amount {
   font-weight: 700;
 }
 
-.list__table {
+.dropdown__list__table {
   padding: .3em 0;
   width: 100%;
 }
 
-.list__data {
+.dropdown__list__data {
   padding: .4em 0;
 }
 
-.list__date {
+.dropdown__list__date {
   color: #8494B2;
   text-align: right;
 }
 
-.list__amount {
+.dropdown__list__amount {
   text-align: right;
 }
 
-.link {
+.dropdown__link {
   color: #5A55AB;
   font-size: 0.725em;
   font-weight: 700;
@@ -131,7 +131,7 @@
   padding: .5em 0 1.5em;
 }
 
-.link__img {
+.dropdown__link__img {
   padding-left: 0.5em;
   
 }
